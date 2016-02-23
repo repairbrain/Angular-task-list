@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Tags</th>
+		<th>Actual effort</th>
+		<th>Estimated effort</th>
+		<th>Due date</th>
+	</tr>
+	<tr ng-repeat="task in tasks" ng-if="task.obj_status==='active'">
+		<td><a href="#/{{task.id}}" ng-style="task.is_high_priority && {'font-weight':'bold'}">{{task.name}}</a></td>
+		<td>
+			<span ng-repeat="tag in task.tags">{{tag}} </span>
+		</td>
+		<td>{{task.actual_effort}}</td>
+		<td>{{task.estimated_effort}}</td>
+		<td>{{task.due_date | date : 'medium'}}</td>
+	</tr>
+</table>

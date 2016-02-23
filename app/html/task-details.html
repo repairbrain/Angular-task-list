@@ -1,0 +1,24 @@
+<a href="/App/#/">To tasks list</a>
+
+<table class="table table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Tags</th>
+		<th>Actual effort</th>
+		<th>Estimated effort</th>
+		<th>Due date</th>
+	</tr>
+	<tr>
+		<td>
+			<span editable-text="task.name" onaftersave="updateTask()">{{task.name}}</span>
+		</td>
+		<td>{{task.description}}</td>
+		<td>
+			<span ng-repeat="tag in task.tags">{{tag}} </span>
+		</td>
+		<td>{{task.actual_effort}}</td>
+		<td>{{task.estimated_effort}}</td>
+		<td>{{task.due_date | date : 'medium'}}</td>
+	</tr>
+</table>
